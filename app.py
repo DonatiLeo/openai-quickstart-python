@@ -23,7 +23,7 @@ def index():
 
 
 def generate_prompt(animal):
-    return """Suggest three names for an animal that is a superhero.
+    return """Propose trois noms pour un animal de compagnie qui est un superhéro.
 
 Animal: Cat
 Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
