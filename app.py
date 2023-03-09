@@ -10,11 +10,12 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 @app.route("/", methods=("GET", "POST"))
 def index():
     if request.method == "POST":
-        animal = request.form["animal"]
+        text = request.form["animal"]
         response = openai.Completion.create(
             model="text-davinci-003",
-            prompt=generate_prompt(animal),
-            temperature=0.6,
+                prompt=text,
+                max_tokens=7,
+                temperature=0
         )
         return redirect(url_for("index", result=response.choices[0].text))
 
