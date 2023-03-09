@@ -1,13 +1,15 @@
 import os
 import openai
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "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"
 
-completion = openai.Completion.create(
-  model="text-davinci-003",
-  prompt="Say this is a test",
-  max_tokens=7,
-  temperature=0
+completion = openai.ChatCompletion.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "Tu es un assistant intelligent"},
+    {"role": "user", "content": "Explique simplement ce que tu es"},
+    ],
+temperature=0,
 )
 
-print(completion.choices[0].text)
+print(completion['choices'][0]['message']['content'])
