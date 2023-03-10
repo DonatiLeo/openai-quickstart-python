@@ -9,7 +9,7 @@ completion = openai.ChatCompletion.create(
     {"role": "system", "content": "Tu es un assistant intelligent"},
     {"role": "user", "content": "Explique simplement ce que tu es"},
     ],
-temperature=0,
+    temperature=0,
 )
 
 print(completion['choices'][0]['message']['content'])
